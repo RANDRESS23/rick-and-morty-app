@@ -31,6 +31,11 @@ module.exports = {
           primary: '#10a6e9',
           secondary: '#e5f4fb'
         }
+      },
+      status: {
+        alive: '#15803d',
+        dead: '#b91c1c',
+        unknown: '#374151'
       }
     }
   },
