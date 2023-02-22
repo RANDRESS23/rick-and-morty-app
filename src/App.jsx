@@ -1,11 +1,14 @@
 import Home from './pages/Home'
 import { BrowserRouter } from 'react-router-dom'
+import { CharactersFindedProvider } from './context/CharactersFindedContext'
 
 export default function App () {
   return (
     <div className='bg-light-secondary'>
       <BrowserRouter>
-        <Home />
+        <CharactersFindedProvider>
+          <Home />
+        </CharactersFindedProvider>
       </BrowserRouter>
     </div>
   )

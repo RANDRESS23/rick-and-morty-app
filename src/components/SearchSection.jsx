@@ -1,11 +1,12 @@
 import InputSearch from './InputSearch'
 import rick from '../assets/rick.png'
+import evilRick from '../assets/evil-rick.png'
 
 export default function SearchSection () {
   return (
-    <div className='w-full h-screen flex justify-evenly items-center pt-14'>
-      <div className='bg-light-blue-primary w-96 h-96 rounded-md shadow-2xl shadow-light-blue-primary/40'>
-        <img src='https://rickandmortyapi.com/api/character/avatar/119.jpeg' alt='bug inspect GIF by Rick and Morty' className='w-full h-full rounded-md object-cover' />
+    <div className='w-full h-screen flex justify-evenly items-center pt-14 gap-5'>
+      <div className='bg-light-button-primary flex justify-center items-center w-2/5 h-4/5 shadow-2xl shadow-light-blue-primary/40'>
+        <img src={evilRick} alt='Evil Rick - Rick and Morty Series' className='rounded-md' />
       </div>
       <div className='flex flex-col justify-center items-center'>
         <div className='flex justify-center items-center mb-10 gap-3'>
