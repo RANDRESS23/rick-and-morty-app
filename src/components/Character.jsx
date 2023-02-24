@@ -1,20 +1,31 @@
+import MaleSymbol from './MaleSymbol'
+import FemaleSymbol from './FemaleSymbol'
+import UnknownSymbol from './UnknownSymbol'
+
 export default function Character ({
   id, name, gender, image, species, status, type, origin, location
 }) {
   return (
-    <div className='w-60 bg-light-primary shadow-2xl shadow-light-blue-secondary rounded-md'>
-      <img src={image} alt={name} className='rounded-t-md border-4 border-status-alive' />
-      <p className='w-2/4 m-auto mt-4 bg-light-blue-secondary rounded-md text-center py-2 text-lg font-bold'>{name}</p>
-      <div className='flex justify-between items-center py-4'>
-        <div>
-          <div className='flex justify-center items-center gap-2 pl-2'>
-            <p>{species}</p>
-            <p>|</p>
-            <p>{gender}</p>
-          </div>
+    <div className='w-64 flex flex-col grow bg-light-primary shadow-2xl shadow-light-blue-secondary rounded-md'>
+      <div>
+        <img src={image} alt={name} className={` object-cover rounded-t-md border-4 ${status === 'Alive' ? 'border-status-alive' : status === 'Dead' ? 'border-status-dead' : 'border-status-unknown'}`} />
+        <div className={`py-1 ${status === 'Alive' ? 'bg-status-alive' : status === 'Dead' ? 'bg-status-dead' : 'bg-status-unknown'}`}>
+          <p className='text-light-primary text-lg text-center font-bold'>{status}</p>
         </div>
-        <div className='bg-status-alive py-1 px-2 rounded-md'>
-          <p className='text-light-primary text-center font-semibold'>{status}</p>
+      </div>
+      <p className='m-auto text-center pt-2 pb-1 px-2 text-xl font-bold'>{name}</p>
+      <div className='flex justify-center items-center gap-2 pb-4 px-2'>
+        <p className='text-sm'>{species}</p>
+        <p className='text-sm'>|</p>
+        <div className='flex items-center gap-1'>
+          <p className='text-sm'>{gender}</p>
+          {
+            gender === 'Male'
+              ? <MaleSymbol />
+              : gender === 'Female'
+                ? <FemaleSymbol />
+                : <UnknownSymbol />
+          }
         </div>
       </div>
     </div>
