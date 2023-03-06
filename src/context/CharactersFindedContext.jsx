@@ -4,9 +4,10 @@ export const CharactersFindedContext = createContext()
 
 export function CharactersFindedProvider ({ children }) {
   const [charactersFinded, setCharactersFinded] = useState([])
+  const [nextCharacters, setNextCharacters] = useState(null)
 
   return (
-    <CharactersFindedContext.Provider value={{ charactersFinded, setCharactersFinded }}>
+    <CharactersFindedContext.Provider value={{ charactersFinded, setCharactersFinded, nextCharacters, setNextCharacters }}>
       {children}
     </CharactersFindedContext.Provider>
   )

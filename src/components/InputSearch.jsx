@@ -1,11 +1,10 @@
 import { useState, useContext } from 'react'
-import useFindCharacter from '../hooks/useFindCharacter'
 import { CharactersFindedContext } from '../context/CharactersFindedContext'
+import getCharacter from '../services/getCharacter'
 
 export default function InputSearch () {
   const [nameCharacter, setNameCharacter] = useState('')
-  const { setCharactersFinded } = useContext(CharactersFindedContext)
-  const { charactersFinded, loading } = useFindCharacter({ nameCharacter })
+  const { setCharactersFinded, setNextCharacters } = useContext(CharactersFindedContext)
 
   const handleChange = (e) => {
     setNameCharacter(e.target.value)
@@ -13,13 +12,23 @@ export default function InputSearch () {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const GET_CHARACTER_URL = 'https://rickandmortyapi.com/api/character/?name='
 
-    setCharactersFinded(charactersFinded)
+    getCharacter({ urlFetch: `${GET_CHARACTER_URL}${nameCharacter}` })
+      .then(response => {
+        setCharactersFinded(response.results)
+        setNextCharacters(response.info.next)
+        // setLoading(false)
+      })
+      .catch(error => {
+        console.log(error)
+        // setLoading(false)
+      })
   }
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className='flex gap-3'>
+      <form onSubmit={handleSubmit} className='flex flex-col lg:flex-row gap-3'>
         <input type='text' placeholder='Put a Rick and Morty character...' value={nameCharacter} onChange={handleChange} className='w-72 px-5 py-2 border border-light-button-secondary rounded-md text-base text-light-button-primary focus:outline-none focus:border-light-blue-primary' />
         <button type='submit' className='bg-light-button-primary text-base text-light-primary px-5 py-2 rounded-md hover:bg-light-button-secondary transition-all font-semibold'>Search</button>
       </form>

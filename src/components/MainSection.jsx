@@ -1,11 +1,17 @@
+import { useContext } from 'react'
 import ListOfCharacters from './ListOfCharacters'
 import SearchSection from './SearchSection'
+import { CharactersFindedContext } from '../context/CharactersFindedContext'
 
 export default function MainSection () {
+  const { charactersFinded } = useContext(CharactersFindedContext)
+
   return (
-    <div className='container m-auto px-20 pb-7 flex flex-col justify-center items-center'>
+    <div className='container m-auto px-20 flex flex-col justify-center items-center'>
       <SearchSection />
-      <ListOfCharacters />
+      {
+        charactersFinded.length > 0 && <ListOfCharacters />
+      }
     </div>
   )
 }
