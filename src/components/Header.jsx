@@ -7,7 +7,7 @@ export default function Header () {
   const [showNavBurger, setShowNavBurger] = useState(false)
 
   return (
-    <div className='fixed w-full bg-light-primary h-14 shadow-lg shadow-light-blue-secondary'>
+    <div className='fixed z-10 w-full bg-light-primary h-14 shadow-lg shadow-light-blue-secondary'>
       <header className='container m-auto px-8 sm:px-20 flex justify-between items-center h-full'>
         <Link to='/'>
           <img src='https://i.postimg.cc/hjFmyZQL/logo-banner.png' alt='Rick and Morty | logo' className='w-24' />

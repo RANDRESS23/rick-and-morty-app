@@ -1,12 +1,17 @@
+import { useNavigate } from 'react-router-dom'
 import MaleSymbol from './MaleSymbol'
 import FemaleSymbol from './FemaleSymbol'
 import UnknownSymbol from './UnknownSymbol'
 
-export default function Character ({
-  id, index, name, gender, image, species, status, type, origin, location
-}) {
+export default function Character ({ id, index, name, gender, image, species, status }) {
+  const navigate = useNavigate()
+
+  const handleViewExtraInfoCharacter = () => {
+    navigate(`/character/${id}`)
+  }
+
   return (
-    <div className='w-64 flex flex-col grow bg-light-primary shadow-xl shadow-light-blue-primary/20 rounded-md cursor-pointer hover:w-60 transition-all' id={`character${index}`}>
+    <div className='w-64 flex flex-col grow bg-light-primary shadow-xl shadow-light-blue-primary/20 rounded-md cursor-pointer hover:opacity-75 transition-all' id={`character${index}`} onClick={handleViewExtraInfoCharacter}>
       <div>
         <img src={image} alt={name} className={` object-cover rounded-t-md border-4 ${status === 'Alive' ? 'border-status-alive' : status === 'Dead' ? 'border-status-dead' : 'border-status-unknown'}`} />
         <div className={`py-1 ${status === 'Alive' ? 'bg-status-alive' : status === 'Dead' ? 'bg-status-dead' : 'bg-status-unknown'}`}>

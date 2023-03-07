@@ -1,10 +1,25 @@
-import { useContext } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import ListOfCharacters from './ListOfCharacters'
 import SearchSection from './SearchSection'
 import { CharactersFindedContext } from '../context/CharactersFindedContext'
+import { BsFillArrowUpCircleFill } from 'react-icons/bs'
 
 export default function MainSection () {
+  const [showArrowUpButton, setShowArrowUpButton] = useState(false)
   const { charactersFinded } = useContext(CharactersFindedContext)
+
+  useEffect(() => {
+    const isShowArrowUpButton = () => {
+      if (window.scrollY > 1000) setShowArrowUpButton(true)
+      else setShowArrowUpButton(false)
+    }
+
+    window.addEventListener('scroll', isShowArrowUpButton)
+
+    return () => {
+      window.removeEventListener('scroll', isShowArrowUpButton)
+    }
+  }, [])
 
   return (
     <div className='container m-auto px-20 flex flex-col justify-center items-center'>
@@ -12,6 +27,7 @@ export default function MainSection () {
       {
         charactersFinded.length > 0 && <ListOfCharacters />
       }
+      <BsFillArrowUpCircleFill className={`fixed bottom-5 right-5 w-16 h-16 bg-light-primary rounded-full text-light-button-primary hover:text-light-blue-primary cursor-pointer transition duration-[.4s] ${showArrowUpButton ? 'translate-x-0' : 'translate-x-[200%]'}`} onClick={() => window.scrollTo(0, 0)} />
     </div>
   )
 }
