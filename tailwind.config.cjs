@@ -6,7 +6,11 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        logo: 'url("https://i.postimg.cc/SQ3zVjBZ/avatar-unknown.png")'
+      }
+    },
     colors: {
       light: {
         primary: '#ffffff',
@@ -18,6 +22,10 @@ module.exports = {
         blue: {
           primary: '#10a6e9',
           secondary: '#e5f4fb'
+        },
+        green: {
+          primary: '#1f8907',
+          secondary: '#bfffa2'
         }
       },
       dark: {
@@ -28,12 +36,16 @@ module.exports = {
           secondary: '#38bdf8'
         },
         blue: {
-          primary: '#10a6e9',
+          primary: '#1f8907',
           secondary: '#e5f4fb'
+        },
+        green: {
+          primary: '#3dd30d',
+          secondary: '#bfffa2'
         }
       },
       status: {
-        alive: '#15803d',
+        alive: '#1f8907',
         dead: '#b91c1c',
         unknown: '#374151'
       }
