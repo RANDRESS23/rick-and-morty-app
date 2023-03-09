@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import getCharacter from '../services/getCharacter'
 import Header from '../components/Header'
-import CharacterSection from '../components/CharacterSection'
+import CharacterCard from '../components/CharacterCard'
 
 export default function CharacterFocused () {
   const [character, setCharacter] = useState({})
+  const [loading, setLoading] = useState(true)
   const { id } = useParams()
 
   useEffect(() => {
@@ -13,22 +14,20 @@ export default function CharacterFocused () {
 
     getCharacter({ urlFetch: GET_CHARACTER_URL })
       .then(response => {
-        console.log(response)
+        console.log({ response })
         setCharacter(response)
-        // setCharactersFinded(response.results || [])
-        // setNextCharacters(response.info.next)
-        // toast.success('Matches were found!')
+        setLoading(false)
       })
       .catch(error => {
         console.log({ error })
-        // toast.error('No matches found.')
+        setLoading(false)
       })
   }, [])
 
   return (
     <div>
       <Header />
-      <CharacterSection character={character} />
+      {!loading && <CharacterCard character={character} />}
     </div>
   )
 }

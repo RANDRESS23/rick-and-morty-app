@@ -30,7 +30,7 @@ export default function InputSearch () {
   return (
     <div>
       <form onSubmit={handleSubmit} className='flex flex-col lg:flex-row gap-3'>
-        <input type='text' placeholder='Put a Rick and Morty character...' value={nameCharacter} onChange={handleChange} className='w-72 px-5 py-2 border border-light-button-secondary rounded-md text-base text-light-button-primary focus:outline-none focus:border-light-blue-primary' />
+        <input type='text' placeholder='Put a Rick and Morty character...' value={nameCharacter} onChange={handleChange} className='w-72 px-5 py-2 border border-light-button-secondary rounded-md text-base text-light-button-primary focus:outline-none focus:border-light-green-primary' />
         <button type='submit' className='bg-light-button-primary text-base text-light-primary px-5 py-2 rounded-md hover:bg-light-button-secondary transition-all font-semibold'>Search</button>
       </form>
       <Toaster />
