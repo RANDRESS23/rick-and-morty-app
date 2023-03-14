@@ -19,10 +19,6 @@ module.exports = {
           primary: '#0f172a',
           secondary: '#334155'
         },
-        blue: {
-          primary: '#10a6e9',
-          secondary: '#e5f4fb'
-        },
         green: {
           primary: '#1f8907',
           secondary: '#bfffa2'
@@ -34,10 +30,6 @@ module.exports = {
         button: {
           primary: '#0ea5e9',
           secondary: '#38bdf8'
-        },
-        blue: {
-          primary: '#1f8907',
-          secondary: '#e5f4fb'
         },
         green: {
           primary: '#3dd30d',
