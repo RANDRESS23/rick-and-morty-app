@@ -24,7 +24,7 @@ export default function Header () {
             </a>
           </li>
           <li className='hidden lg:block'>
-            <a href='#'>
+            <a href='https://github.com/RANDRESS23/rick-and-morty-app' target='_blank' rel='noreferrer'>
               <AiFillGithub className='w-7 h-7 text-light-button-primary hover:text-light-green-primary transition-all' />
             </a>
           </li>

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import getCharacter from '../services/getCharacter'
 import Header from '../components/Header'
 import CharacterCard from '../components/CharacterCard'
+import loaderSpinner from '../assets/grid.svg'
 
 export default function CharacterFocused () {
   const [character, setCharacter] = useState({})
@@ -27,7 +28,15 @@ export default function CharacterFocused () {
   return (
     <div>
       <Header />
-      {!loading && <CharacterCard character={character} />}
+      {
+        loading
+          ? (
+            <div className='h-screen flex justify-center items-center'>
+              <img src={loaderSpinner} alt='loader-spinner' />
+            </div>
+            )
+          : <CharacterCard character={character} />
+      }
     </div>
   )
 }
