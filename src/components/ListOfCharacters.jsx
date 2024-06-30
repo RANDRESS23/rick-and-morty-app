@@ -36,7 +36,7 @@ export default function ListOfCharacters () {
   return (
     <>
       <h2 className='text-3xl mb-10 font-bold'>All Characters</h2>
-      <div className='w-full grid grid-container grid-cols-1 sm:grid-cols-[repeat(auto-fill,_minmax(256px,_1fr))] gap-6 pb-10'>
+      <div className='w-full grid grid-container grid-cols-1 place-items-center sm:grid-cols-[repeat(auto-fill,_minmax(256px,_1fr))] gap-6 pb-10'>
         {
           charactersFinded.map((character, index) => (
             <Character

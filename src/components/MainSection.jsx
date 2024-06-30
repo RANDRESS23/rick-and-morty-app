@@ -22,7 +22,7 @@ export default function MainSection () {
   }, [])
 
   return (
-    <div className='container m-auto px-20 flex flex-col justify-center items-center'>
+    <div className='container m-auto px-10 lg:px-20 flex flex-col justify-center items-center'>
       <SearchSection />
       {
         charactersFinded.length > 0 && <ListOfCharacters />
