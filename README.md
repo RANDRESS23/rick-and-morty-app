@@ -6,7 +6,7 @@ Este proyecto es una aplicación React.js que permite a los usuarios buscar pers
 
 - Buscar personajes por nombre.
 - Ver información detallada sobre cada personaje.
-- Diseño responsivo con Tailwind CSS
+- Diseño responsivo con Tailwind CSS.
 
 ### Tecnologías utilizadas
 
