@@ -4,7 +4,7 @@ export default function CharacterCard ({ character }) {
   const { name, gender, location, origin, species, status, image } = character
 
   return (
-    <div className='h-screen w-full flex justify-center items-center pt-28 lg:pt-10'>
+    <div className='h-screen w-full flex justify-center items-center lg:pt-10'>
       <div className='w-9/12 h-auto lg:h-[85%] bg-light-primary dark:bg-dark-primary bg-logo bg-no-repeat bg-center border shadow-2xl shadow-light-green-primary/40 dark:shadow-dark-green-primary/40 rounded-lg flex flex-col justify-between transition-all'>
         <div className='bg-light-green-primary dark:bg-dark-green-primary py-1 lg:py-3 rounded-t-lg border-b transition-all'>
           <p className='text-lg lg:text-2xl text-light-primary dark:text-color-text text-center font-bold transition-all'>IDENTIFICATION CARD</p>
