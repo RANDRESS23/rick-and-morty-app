@@ -14,3 +14,6 @@ Este proyecto es una aplicación React.js que permite a los usuarios buscar pers
 - Tailwind CSS
 - Rick and Morty API
 
+![image](https://github.com/RANDRESS23/rick-and-morty-app/assets/115477371/f25a31b5-9e4a-4067-987e-748528cfe4fa)
+
+
