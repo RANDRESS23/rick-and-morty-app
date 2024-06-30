@@ -27,7 +27,7 @@ export default function MainSection () {
       {
         charactersFinded.length > 0 && <ListOfCharacters />
       }
-      <BsFillArrowUpCircleFill className={`fixed bottom-5 right-5 w-16 h-16 bg-light-primary rounded-full text-light-button-primary hover:text-light-blue-primary cursor-pointer transition duration-[.4s] ${showArrowUpButton ? 'translate-x-0' : 'translate-x-[200%]'}`} onClick={() => window.scrollTo(0, 0)} />
+      <BsFillArrowUpCircleFill className={`fixed bottom-5 right-5 w-16 h-16 bg-light-primary dark:bg-dark-primary rounded-full text-dark-primary dark:text-light-primary hover:text-dark-secondary dark:hover:text-light-secondary cursor-pointer transition duration-[.4s] ${showArrowUpButton ? 'translate-x-0' : 'translate-x-[200%]'}`} onClick={() => window.scrollTo(0, 0)} />
     </div>
   )
 }

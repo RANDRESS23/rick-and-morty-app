@@ -9,7 +9,7 @@ export default function SearchSection () {
       <div className='flex flex-col justify-center items-center'>
         <div className='flex justify-center items-center mb-10 gap-3'>
           <img src='https://i.postimg.cc/cLQtKL8W/rick.png' alt='Rick Sanchez' className='w-12 lg:w-16' />
-          <h1 className='text-3xl lg:text-4xl text-center font-bold text-light-button-primary'>Rick and Morty App</h1>
+          <h1 className='text-3xl lg:text-4xl text-center font-bold text-color-text dark:text-light-primary transition-all'>Rick and Morty App</h1>
           <img src='https://i.postimg.cc/cLQtKL8W/rick.png' alt='Rick Sanchez' className='w-12 lg:w-16' />
         </div>
         <InputSearch />

@@ -25,21 +25,24 @@ module.exports = {
         }
       },
       dark: {
-        primary: '#0f172a',
-        secondary: '#1e293b',
+        primary: '#24272c',
+        secondary: '#191b1f',
         button: {
-          primary: '#0ea5e9',
-          secondary: '#38bdf8'
+          primary: '#3f4448',
+          secondary: '#232628'
         },
         green: {
           primary: '#3dd30d',
-          secondary: '#bfffa2'
+          secondary: '#3ad305'
         }
       },
       status: {
         alive: '#1f8907',
         dead: '#b91c1c',
         unknown: '#374151'
+      },
+      color: {
+        text: '#070809'
       }
     }
   },

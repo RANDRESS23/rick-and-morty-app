@@ -11,7 +11,7 @@ export default function Character ({ id, index, name, gender, image, species, st
   }
 
   return (
-    <div className={`w-64 flex flex-col grow bg-light-primary shadow-xl rounded-md cursor-pointer hover:opacity-75 transition-all ${status === 'Alive' ? 'shadow-light-green-primary/20' : status === 'Dead' ? 'shadow-status-dead/30' : 'shadow-status-unknown/20'}`} id={`character${index}`} onClick={handleViewExtraInfoCharacter}>
+    <div className={`w-64 flex flex-col grow bg-light-primary dark:bg-dark-primary shadow-xl rounded-md cursor-pointer hover:opacity-75 transition-all ${status === 'Alive' ? 'shadow-light-green-primary/20' : status === 'Dead' ? 'shadow-status-dead/30' : 'shadow-status-unknown/20'}`} id={`character${index}`} onClick={handleViewExtraInfoCharacter}>
       <div>
         <img src={image} alt={name} className={`object-cover rounded-t-md border-4 ${status === 'Alive' ? 'border-status-alive' : status === 'Dead' ? 'border-status-dead' : 'border-status-unknown'}`} />
         <div className={`py-1 ${status === 'Alive' ? 'bg-status-alive' : status === 'Dead' ? 'bg-status-dead' : 'bg-status-unknown'}`}>
